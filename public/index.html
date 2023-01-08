@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>Login Form</header>
+
+  <div id="container">
+    <!-- javascript:console.log(this) -->
+    <form action="/" method="post" id="login" name="login">
+      <label for="name">Enter your name</label>
+      <br>
+      <input required type="text" name="name" id="login__name" placeholder="your_name">
+      <br><br>
+      <label for="email">Enter Email Address</label>
+      <br>
+      <input required type="email" id="login__email" name="email" placeholder="abc@gmail.com" value="">
+      <br><br>
+      <label for="password">Enter password</label>
+      <br>
+      <input required type="password" id="login__password" name="password" placeholder="abcdef1@" value=""
+        onkeyup="password__validation(this)">
+        <br>
+        <!-- <span style="font-size: 10px; color: red; opacity: 0.6;">Note:  Password must includes a combination of letters (both upper- and lower-case), numbers, and special characters, and is at least 8 characters long.</span> -->
+      <br><br>
+      <label for="confirm_password">Confirm password</label>
+      <br>
+      <input required type="password" id="login__confirm_password" name="confirm_password" placeholder="abcdef1@"
+        value="" onkeyup="password__validation(this)">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <!-- <script src="./index.js"></script> -->
+  <script>
+
+    const password__validation = (e) => {
+      const value = e.value;
+      const spacialCharactor = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+      const number = /\d/;
+
+      if (value.length >= 8 && spacialCharactor.test(value) && number.test(value)) {
+        console.log("yes")
+        e.style.borderColor = "green";
+      }
+      else {
+        if(value.length === 0) {
+          e.style.borderColor = "orange";  
+        }
+        else {
+          e.style.borderColor = "red";
+        }
+      }
+    }
+
+    // const confirm__password = (e) => {
+    //   password__validation(e)
+    //   const value = e.value;
+    //   // if()
+    // }
+  </script>
+</body>
+
+</html>
