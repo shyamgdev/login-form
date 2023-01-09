@@ -27,9 +27,10 @@
       <br>
       <input required type="password" id="login__password" name="password" placeholder="abcdef1@" value=""
         onkeyup="password__validation(this)">
-        <br>
-        <!-- <span style="font-size: 10px; color: red; opacity: 0.6;">Note:  Password must includes a combination of letters (both upper- and lower-case), numbers, and special characters, and is at least 8 characters long.</span> -->
-      <br><br>
+      <br>
+      <h6 style="font-size: 10px; color: red; opacity: 0.6;"><strong>Note: </strong>Password must includes a combination of letters (both
+        upper- and lower-case), numbers, and special characters, and is at least 8 characters long.</h6>
+      <br>
       <label for="confirm_password">Confirm password</label>
       <br>
       <input required type="password" id="login__confirm_password" name="confirm_password" placeholder="abcdef1@"
@@ -52,8 +53,8 @@
         e.style.borderColor = "green";
       }
       else {
-        if(value.length === 0) {
-          e.style.borderColor = "orange";  
+        if (value.length === 0) {
+          e.style.borderColor = "orange";
         }
         else {
           e.style.borderColor = "red";
